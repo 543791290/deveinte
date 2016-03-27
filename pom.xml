@@ -138,6 +138,18 @@
 			<version>3.2.2</version>
 		</dependency>
 
+		<!-- spring集成redis相关的依赖 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.6.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+
 
 		<!-- aop -->
 		<dependency>
@@ -192,11 +204,8 @@
 			<version>1.0.14</version>
 		</dependency>
 		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
-	<!-- 	<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.2.2</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>commons-dbcp</groupId> <artifactId>commons-dbcp</artifactId> 
+			<version>1.2.2</version> </dependency> -->
 		<!-- springmvc文件上传功能所依赖的组件 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
