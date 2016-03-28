@@ -9,7 +9,7 @@ import java.util.Properties;
  * @author wanghao
  *
  */
-public class PropUtils {
+public class PropUtil {
 	protected static final String REDIS_RESOURCES_PROPERTIES_FILE_NAME = "redis.properties";
 
 	/**
@@ -21,7 +21,7 @@ public class PropUtils {
 	 */
 	protected static Properties getProperties(String propertiesFileName) throws IOException {
 		Properties prop = new Properties();
-		InputStream is = PropUtils.class.getClassLoader().getResourceAsStream(propertiesFileName);
+		InputStream is = PropUtil.class.getClassLoader().getResourceAsStream(propertiesFileName);
 
 		try {
 			prop.load(is);

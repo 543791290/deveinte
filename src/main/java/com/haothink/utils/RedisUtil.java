@@ -27,17 +27,17 @@ public final class RedisUtil {
 	    public static JedisPool getPool() {
 	        if (pool == null) {
 	            JedisPoolConfig config = new JedisPoolConfig();
-	            config.setMaxTotal(Integer.valueOf(PropUtils.getRedisValue("redis.pool.maxActive")));
-	            config.setMaxIdle(Integer.valueOf(PropUtils.getRedisValue("redis.pool.maxIdle")));
-	            config.setMaxWaitMillis(Long.valueOf(PropUtils.getRedisValue("redis.pool.maxWait")));
-	            config.setTestOnBorrow(Boolean.valueOf(PropUtils.getRedisValue("redis.pool.testOnBorrow")));
-	            config.setTestOnReturn(Boolean.valueOf(PropUtils.getRedisValue("redis.pool.testOnReturn")));
+	            config.setMaxTotal(Integer.valueOf(PropUtil.getRedisValue("redis.maxActive")));
+	            config.setMaxIdle(Integer.valueOf(PropUtil.getRedisValue("redis.maxIdle")));
+	            config.setMaxWaitMillis(Long.valueOf(PropUtil.getRedisValue("redis.maxWait")));
+	            config.setTestOnBorrow(Boolean.valueOf(PropUtil.getRedisValue("redis.testOnBorrow")));
+	            config.setTestOnReturn(Boolean.valueOf(PropUtil.getRedisValue("redis.testOnReturn")));
 	            // 测试环境
 	            // pool = new JedisPool(config, bundle.getString("redis.ip"),
 	            // Integer.valueOf(bundle.getString("redis.port")));
 	            // 线上环境
-	            pool = new JedisPool(config, PropUtils.getRedisValue("redis.ip"), Integer.valueOf(PropUtils.getRedisValue("redis.port")),
-	                    100000, PropUtils.getRedisValue("redis.pool.password"));
+	            pool = new JedisPool(config, PropUtil.getRedisValue("redis.host"), Integer.valueOf(PropUtil.getRedisValue("redis.port")),
+	                    100000, PropUtil.getRedisValue("redis.password"));
 	        }
 	        return pool;
 	    }
