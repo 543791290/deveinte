@@ -20,7 +20,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- 使Spring支持自动检测组件，如注解的Controller -->
-	<context:component-scan base-package="com.haothink.controller" />
+	<context:component-scan base-package="com.haothink.service.impl,com.haothink.controller" />
 	
 	<!-- 使用此注解代替了注解适配器和注解映射器 -->
 	<!-- Spring MVC JSON配置 -->
