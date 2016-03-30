@@ -1,9 +1,18 @@
 package com.haothink.po;
 
 import java.io.Serializable;
+import java.util.List;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+/**
+ * 
+ * @author wanghao
+ * http://docs.spring.io/spring-data/mongodb/docs/current/reference/html/
+ */
 @Document
 public class Persion implements Serializable{
 
@@ -12,16 +21,27 @@ public class Persion implements Serializable{
 	 */
 	private static final long serialVersionUID = 1111490916808059129L;
 
-	private String id;  
+	@Id
+	private ObjectId id;
+	@Indexed(unique = true)
+	private String ssn;  
 	private String name;  
 	private int age;  
 	private String password;
+	@DBRef
+	private List<Address> address;
 	
-	public String getId() {
+	public ObjectId getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(ObjectId id) {
 		this.id = id;
+	}
+	public String getSsn() {
+		return ssn;
+	}
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
 	public String getName() {
 		return name;
@@ -40,6 +60,12 @@ public class Persion implements Serializable{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	} 
 	
 	
