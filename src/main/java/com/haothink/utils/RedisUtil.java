@@ -37,7 +37,7 @@ public final class RedisUtil {
 	            // Integer.valueOf(bundle.getString("redis.port")));
 	            // 线上环境
 	            pool = new JedisPool(config, PropUtil.getRedisValue("redis.host"), Integer.valueOf(PropUtil.getRedisValue("redis.port")),
-	                    100000, PropUtil.getRedisValue("redis.password"));
+	                    Integer.parseInt(PropUtil.getRedisValue("redis.timeout")), PropUtil.getRedisValue("redis.password"));
 	        }
 	        return pool;
 	    }
@@ -60,8 +60,8 @@ public final class RedisUtil {
 	     * @param redis
 	     */
 	    public static void returnResource(JedisPool pool, Jedis redis) {
-	        if (redis != null) {
-	            pool.close();
+	        if (redis != null && pool != null) {
+	        	redis.close();
 	        }
 	    }
 	 
@@ -85,7 +85,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return value;
@@ -111,7 +111,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return value;
@@ -137,7 +137,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return value;
@@ -163,7 +163,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	 pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return value;
@@ -189,7 +189,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	 pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return value;
@@ -216,7 +216,7 @@ public final class RedisUtil {
 	            e.printStackTrace();
 	        } finally {
 	            // 释放redis对象
-	            pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return result;
@@ -241,7 +241,7 @@ public final class RedisUtil {
 	            e.printStackTrace();
 	        } finally {
 	            // 释放redis对象
-	            pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return result;
@@ -265,7 +265,7 @@ public final class RedisUtil {
 	            e.printStackTrace();
 	        } finally {
 	            // 释放redis对象
-	            pool.close();
+	            jedis.close();
 	        }
 	 
 	        return result;
@@ -289,7 +289,7 @@ public final class RedisUtil {
 	            e.printStackTrace();
 	        } finally {
 	            // 释放redis对象
-	            pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return result;
@@ -314,7 +314,7 @@ public final class RedisUtil {
 	        } finally {
 	            // 释放redis对象
 	            // 返还到连接池
-	        	 pool.close();
+	        	  jedis.close();
 	        }
 	 
 	        return result;

@@ -25,9 +25,7 @@ public class PersionDaoImpl implements PersionDao{
 		mongoTemplate.insert(object, collectionName);  
 	}
 
-
 	public Persion findOne(Map<String, Object> params, String collectionName) {
-
 		return mongoTemplate.findOne(new Query(Criteria.where("id").is(params.get("id"))), Persion.class, collectionName);
 	}
 
@@ -52,8 +50,13 @@ public class PersionDaoImpl implements PersionDao{
 
 
 	public void remove(Map<String, Object> params, String collectionName) {
-		// TODO Auto-generated method stub
+		
 		mongoTemplate.remove(new Query(Criteria.where("id").is(params.get("id"))),Persion.class,collectionName);  
+	}
+
+	public List<Persion> findAll(String collectionName) {
+		
+		return mongoTemplate.findAll(Persion.class, collectionName);
 	}
 
 }
