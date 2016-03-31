@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd" updateCheck="false" >
 	<!-- hibernate二级缓存存放的地方是D:/ehcache-->
-	<diskStore path="D:/ehcache" />
+	<diskStore path="ehcache" />
 	<!-- DefaultCache setting. -->
      <defaultCache
             maxElementsInMemory="1000"
@@ -17,7 +17,7 @@
 	<!-- Special objects setting. -->
 
 	<cache 
-	     name="org.andy.work.entity.AcctUser"
+	     name="com.haothink.po.User"
 		 maxElementsInMemory="2"
 		 memoryStoreEvictionPolicy="LRU" 
 		 eternal="true" 
