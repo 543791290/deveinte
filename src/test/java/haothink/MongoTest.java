@@ -27,5 +27,6 @@ public class MongoTest {
 		System.out.println(params.get("id"));
 		Persion person = persionDaoInpl.findOne(params, "col");
 		System.out.println(person.getName());
+	
 	}
 }

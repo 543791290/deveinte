@@ -150,7 +150,13 @@
 			<version>2.8.0</version>
 		</dependency>
 
-
+		<!--  kafka-->
+		<!-- kafka jar -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.8.2.2</version>
+		</dependency>
 		<!-- aop -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

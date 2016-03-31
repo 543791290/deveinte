@@ -1,6 +1,6 @@
 package haothink;
 
-import org.apache.catalina.core.ApplicationContext;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
