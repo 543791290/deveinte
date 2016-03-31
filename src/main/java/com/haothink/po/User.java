@@ -1,9 +1,17 @@
 package com.haothink.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
-    private Integer id;
+public class User implements Serializable{
+	
+	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6106252090531926483L;
+
+	private Integer id;
 
     private String username;
 
