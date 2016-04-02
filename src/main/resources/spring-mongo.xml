@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<mongo:mongo-client host="${mongo.host}" port="${mongo.port}">
+		<mongo:client-options write-concern="NORMAL"
+			min-connections-per-host="${mongo.connectionsPerHost}"
+			max-connection-life-time="${mongo.connectLifeTime}"
+			max-connection-idle-time="${mongo.connectIdleTime}" max-wait-time="${mongo.maxWaitTime}"
+			connect-timeout="${mongo.connectTimeout}" socket-keep-alive="${mongo.socketKeepAlive}"
+			socket-timeout="${mongo.socketTimeout}" />
+	</mongo:mongo-client>
+
+	<!-- 设置使用的数据库 名 -->
+	<mongo:db-factory dbname="wanghao" mongo-ref="mongo" />
+	<!-- mongodb的模板 -->
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean>
+</beans>  
