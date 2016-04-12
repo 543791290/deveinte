@@ -35,7 +35,7 @@ public final class RedisUtil {
 	            // 测试环境
 	            // pool = new JedisPool(config, bundle.getString("redis.ip"),
 	            // Integer.valueOf(bundle.getString("redis.port")));
-	            // 线上环境
+	            // 生产环境
 	            pool = new JedisPool(config, PropUtil.getRedisValue("redis.host"), Integer.valueOf(PropUtil.getRedisValue("redis.port")),
 	                    Integer.parseInt(PropUtil.getRedisValue("redis.timeout")), PropUtil.getRedisValue("redis.password"));
 	        }
