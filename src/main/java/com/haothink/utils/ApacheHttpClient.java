@@ -6,5 +6,8 @@ package com.haothink.utils;
  */
 public class ApacheHttpClient {
 	
-	
+	public static void main(String[] args) {
+		//Returns the number of processors available to the Java virtual machine.
+		System.out.println(Runtime.getRuntime().availableProcessors());
+	}
 }
