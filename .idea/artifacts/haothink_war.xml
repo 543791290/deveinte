@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="haothink:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="haothink.war">
+      <element id="artifact" artifact-name="haothink:war exploded" />
+    </root>
+  </artifact>
+</component>
