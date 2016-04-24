@@ -3,8 +3,7 @@ package com.haothink.utils;
  * 
  * 
  */
-import java.util.Locale;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -12,6 +11,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.LocaleResolver;
+
+import java.util.Locale;
 
 /**
  * Utils - Spring
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.LocaleResolver;
 @Lazy(false)
 public final class SpringUtil implements ApplicationContextAware, DisposableBean {
 
+	private static final Logger logger = Logger.getLogger(SpringUtil.class);
 	/** applicationContext */
 	private volatile static ApplicationContext applicationContext;
 
@@ -33,6 +35,7 @@ public final class SpringUtil implements ApplicationContextAware, DisposableBean
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext) {
+		logger.debug("Init ApplicationContext by SpringUtil"+applicationContext);
 		SpringUtil.applicationContext = applicationContext;
 	}
 
