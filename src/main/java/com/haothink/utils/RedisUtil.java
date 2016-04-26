@@ -12,7 +12,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * http://www.codeceo.com/article/redis-spring-cache.html
  * 
  */
-public final class RedisUtil {
+public final class RedisUtil{
 
 	private static JedisPool pool = null;
 	private static ThreadLocal<JedisPool> poolThreadLocal = new ThreadLocal<JedisPool>();
