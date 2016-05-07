@@ -3,11 +3,14 @@
  */
 package com.haothink.utils;
 
-import java.util.Map;
-
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
 
+import java.util.Map;
+
+/**
+ * 用于kafka的分区使用
+ */
 public class JPartitioner implements Partitioner {
 
     /**

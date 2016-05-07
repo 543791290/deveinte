@@ -31,7 +31,6 @@ public class UserController {
 	@RequestMapping("/findStudents")
 	public @ResponseBody
 	List<Student> findStudents(){
-
 		return studentDao.findAll("students");
 	}
 }

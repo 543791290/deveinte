@@ -33,6 +33,7 @@ public class StudentDaoImplTest {
 
     @Test
     public void findAll() throws Exception {
+        System.out.println(ac);
         StudentDao studentDao = (StudentDao)ac.getBean("StudentDaoImpl");
         List<Student> studentList = studentDao.findAll("students");
     }

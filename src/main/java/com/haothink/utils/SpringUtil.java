@@ -7,8 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.LocaleResolver;
 
@@ -20,8 +18,6 @@ import java.util.Locale;
  * 
  * @version 1.0
  */
-@Component("springUtil")
-@Lazy(false)
 public final class SpringUtil implements ApplicationContextAware, DisposableBean {
 
 	private static final Logger logger = Logger.getLogger(SpringUtil.class);
@@ -35,8 +31,9 @@ public final class SpringUtil implements ApplicationContextAware, DisposableBean
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext) {
-		logger.debug("Init ApplicationContext by SpringUtil"+applicationContext);
+		logger.info("Init ApplicationContext by SpringUtil"+applicationContext);
 		SpringUtil.applicationContext = applicationContext;
+        logger.info("Inited ApplicationContext");
 	}
 
 	public void destroy() throws Exception {
