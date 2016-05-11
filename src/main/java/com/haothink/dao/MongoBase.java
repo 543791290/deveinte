@@ -3,7 +3,10 @@ package com.haothink.dao;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ *
+ * @param <T>
+ */
 public interface MongoBase<T> {
 	
 	public void insert(T t, String collectionName) ;

@@ -1,8 +1,9 @@
 package com.haothink.po;
 
-import java.io.Serializable;
-
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
 
 @Document
 public class Address implements Serializable{
@@ -11,7 +12,7 @@ public class Address implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 3206116262377882409L;
-	
+	@Indexed
 	private Long id;
 	private String loc;
 	public Long getId() {
